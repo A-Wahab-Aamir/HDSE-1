@@ -3,3 +3,6 @@
 
 # Data Management with SQL Server
 > https://www.youtube.com/playlist?list=PLXt83E2Ihyvs0vqfRudHAD1kKR5EBoK_X
+>
+> # Books Links
+> https://drive.google.com/drive/folders/13H4CedbV-poez3BCbFGTlOwJd-L21Ltb
