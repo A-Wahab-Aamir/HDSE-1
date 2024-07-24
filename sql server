@@ -1,0 +1,102 @@
+
+
+5/24 work
+
+create database Company
+
+create table Product(
+PID INT , PNAME VARCHAR(255)
+)
+
+create table ProductDesc(
+PID INT , PDESC VARCHAR(255)
+)
+
+INSERT INTO Product VALUES 
+			(601 , 'PAINTS') , 
+			(602 , 'BOTTELS') ,
+			(603, 'MARBELS')
+
+INSERT INTO ProductDesc VALUES 
+				(601 , 'HIGH QUALIFIED PURE PAINTS') , 
+				(602 , ' NON BREAKABLE SOLID BOTTELS') , 
+				(603, 'NEW DESIGNED BOLD MARBELS')
+
+
+CREATE PROCEDURE GetProductU1
+@p1_id int=601 , @p2_id int=602 , @p3_id int=603
+as
+begin 
+select P.PID , P.PNAME , PD.PDESC FROM 
+Product AS P INNER JOIN ProductDesc AS PD
+ON P.PID=PD.PID where 
+END
+
+EXEC GetProductUnique 602
+
+
+
+7/24 work 
+
+CREATE TABLE students (
+    student_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    address VARCHAR(100),
+    class VARCHAR(20),
+    city VARCHAR(50)
+);
+INSERT INTO students (student_id, name, address, class, city) VALUES
+(1, 'Ali Khan', '123 Main St', '10th', 'Karachi'),
+(2, 'Sana Ahmed', '456 First Ave', '9th', 'Karachi'),
+(3, 'Imran Malik', '789 Second St', '11th', 'Lahore'),
+(4, 'Ayesha Farooq', '321 Third Ave', '12th', 'Islamabad'),
+(5, 'Ahmed Hassan', '654 Fourth St', '10th', 'Karachi'),
+(6, 'Fatima Khan', '987 Fifth Ave', '9th', 'Lahore'),
+(7, 'Bilal Ali', '741 Sixth St', '11th', 'Islamabad'),
+(8, 'Sara Khan', '852 Seventh Ave', '12th', 'Karachi'),
+(9, 'Kamran Malik', '369 Eighth St', '10th', 'Lahore'),
+(10, 'Hina Ahmed', '159 Ninth Ave', '9th', 'Islamabad');
+
+select * from students
+
+create Procedure ViewAll
+as
+begin 
+select * from students
+end
+
+exec ViewAll
+
+create Procedure SelStudent @name varchar(255)
+as
+begin 
+select * from students where name=@name; 
+end 
+
+exec SelStudent 'sara khan'
+
+create Procedure SelCity @city varchar(255)
+as
+begin 
+select * from students where city=@city
+end
+
+exec SelCity 'multan'
+
+
+create Procedure InsertStd  @student_id  int ,
+@name varchar(255), 
+@address varchar(255) , 
+@class varchar(255) ,
+@city varchar(255)
+as
+begin 
+INSERT INTO students (student_id, name, address, class, city) VALUES
+(@student_id, @name, @address, @class,  @city)
+end
+
+exec InsertStd 12 , 'ali zafar' , 'malir',  '11th' ,'lahore'
+
+exec ViewAll
+exec SelStudent 'mahmood ali'
+
