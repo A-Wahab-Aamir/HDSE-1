@@ -1,0 +1,203 @@
+using System;
+public class Fruits
+{
+    string name;
+
+
+
+    public Fruits(string name)
+    {
+        this.name = name;
+    }
+
+    public string GetName()
+    {
+        return name;
+    }
+    public string Display()
+    {
+        return ("Name: " + this.GetName());
+    }
+
+    public static void Main()
+    {
+        Fruits f = new Fruits("appple");
+           Console.WriteLine( f.Display());
+    }
+
+}
+-----------------------------------------------------------------------------------
+using System;
+
+public class Books
+{
+    private string title;
+    private string author;
+
+    public Books(string title, string author)
+    {
+        this.title = title;
+        this.author = author;
+    }
+
+    public string GetTitle()
+    {
+        return title;
+    }
+
+    public string GetAuthor()
+    {
+        return author;
+    }
+
+    public string Display()
+    {
+        return $"Title: {this.GetTitle()}, Author: {this.GetAuthor()}";
+    }
+
+    public static void Main()
+    {
+        Books b = new Books("1984", "George Orwell");
+        Console.WriteLine(b.Display());
+    }
+}
+---------------------------------------------------------------------------------
+using System;
+
+public class Cars
+{
+    private string make;
+    private string model;
+
+    public Cars(string make, string model)
+    {
+        this.make = make;
+        this.model = model;
+    }
+
+    public string GetMake()
+    {
+        return make;
+    }
+
+    public string GetModel()
+    {
+        return model;
+    }
+
+    public string Display()
+    {
+        return $"Make: {this.GetMake()}, Model: {this.GetModel()}";
+    }
+
+    public static void Main()
+    {
+        Cars c = new Cars("Toyota", "Camry");
+        Console.WriteLine(c.Display());
+    }
+}
+-----------------------------------------------------------------------------------------
+using System;
+
+public class Students
+{
+    private string name;
+    private int grade;
+
+    public Students(string name, int grade)
+    {
+        this.name = name;
+        this.grade = grade;
+    }
+
+    public string GetName()
+    {
+        return name;
+    }
+
+    public int GetGrade()
+    {
+        return grade;
+    }
+
+    public string Display()
+    {
+        return $"Name: {this.GetName()}, Grade: {this.GetGrade()}";
+    }
+
+    public static void Main()
+    {
+        Students s = new Students("John Doe", 90);
+        Console.WriteLine(s.Display());
+    }
+}
+-------------------------------------------------------------------------------
+using System;
+
+public class Movies
+{
+    private string title;
+    private int releaseYear;
+
+    public Movies(string title, int releaseYear)
+    {
+        this.title = title;
+        this.releaseYear = releaseYear;
+    }
+
+    public string GetTitle()
+    {
+        return title;
+    }
+
+    public int GetReleaseYear()
+    {
+        return releaseYear;
+    }
+
+    public string Display()
+    {
+        return $"Title: {this.GetTitle()}, Release Year: {this.GetReleaseYear()}";
+    }
+
+    public static void Main()
+    {
+        Movies m = new Movies("Inception", 2010);
+        Console.WriteLine(m.Display());
+    }
+}
+---------------------------------------------------------------------------------------
+using System;
+
+public class Products
+{
+    private string name;
+    private double price;
+
+    public Products(string name, double price)
+    {
+        this.name = name;
+        this.price = price;
+    }
+
+    public string GetName()
+    {
+        return name;
+    }
+
+    public double GetPrice()
+    {
+        return price;
+    }
+
+    public string Display()
+    {
+        return $"Name: {this.GetName()}, Price: ${this.GetPrice():0.00}";
+    }
+
+    public static void Main()
+    {
+        Products p = new Products("Laptop", 999.99);
+        Console.WriteLine(p.Display());
+    }
+}
