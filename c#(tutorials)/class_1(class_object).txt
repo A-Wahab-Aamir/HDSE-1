@@ -1,0 +1,129 @@
+using System;
+
+class Program
+{
+    public static void Main()
+    {
+        // Create instances of the Calculator class with different initial values
+        Calculator c1 = new Calculator(12, 4);
+        Calculator c2 = new Calculator(9, 3);
+        
+        // Output the results of the calculations for the first calculator
+        Console.WriteLine("For c1 (12, 4):");
+        Console.WriteLine("Sum: " + c1.CalculateSum());
+        Console.WriteLine("Difference: " + c1.CalculateDifference());
+        Console.WriteLine("Product: " + c1.CalculateProduct());
+        Console.WriteLine("Quotient: " + c1.CalculateQuotient());
+        
+        // Output the results of the calculations for the second calculator
+        Console.WriteLine("\nFor c2 (9, 3):");
+        Console.WriteLine("Sum: " + c2.CalculateSum());
+        Console.WriteLine("Difference: " + c2.CalculateDifference());
+        Console.WriteLine("Product: " + c2.CalculateProduct());
+        Console.WriteLine("Quotient: " + c2.CalculateQuotient());
+    }
+}
+
+public class Calculator
+{
+    private int x, y;  // Fields to store the numbers
+
+    // Constructor to initialize the fields
+    public Calculator(int x, int y)
+    {
+        this.x = x;
+        this.y = y;
+    }
+    
+    // Method to calculate the sum of x and y
+    public int CalculateSum()
+    {
+        return this.x + this.y;
+    }
+    
+    // Method to calculate the difference between x and y
+    public int CalculateDifference()
+    {
+        return this.x - this.y;
+    }
+    
+    // Method to calculate the product of x and y
+    public int CalculateProduct()
+    {
+        return this.x * this.y;
+    }
+    
+    // Method to calculate the quotient of x divided by y
+    // Handles division by zero
+    public string CalculateQuotient()
+    {
+        if (this.y == 0)
+        {
+            return "Division by zero is not allowed.";
+        }
+        return (this.x / (double)this.y).ToString();
+    }
+}
+---------------------------------------------------------------------------------------------------------
+class Program
+{
+    static void Main()
+    {
+        Employee e1 = new Employee("ali khan", "malir khi" ,101 , 24);
+       Console.WriteLine(e1.GetInfo());
+        Console.WriteLine(e1.Getdetail());
+
+    }
+}
+
+public class Employee
+{
+    // define attributes/ vaiables
+    string name, address;
+    int emp_code, age; 
+
+    // make contructor
+    public Employee(string name , string address , int emp_code , int age)
+    {
+        this.name = name;
+        this.address = address;
+        this.emp_code =Convert.ToInt32( emp_code);
+        this.age = Convert.ToInt32(age);
+    }
+
+    // method 
+    public string GetInfo()
+    {
+        return ("\tEmp Name: " + this.name + "\nAddress: " + this.address);   
+    }
+   public string Getdetail()
+    {
+        return ("Emp Code: " + this.emp_code + "\n Age: " + this.age);
+    
+    }
+
+}
+-------------------------------------------------------------------------------------------------------------
+class Movies
+{
+    string name , release_year; 
+
+    public Movies(string name , string release_year)
+    {
+        this.name = name;
+        this.release_year = release_year;
+    }
+    public string GetMovies()
+    {
+        return (this.name + " \n " + this.release_year);
+    }
+
+    static void Main()
+    {
+        Movies m1 = new Movies("alaska", "1909");
+        Console.WriteLine(m1.GetMovies());   
+    
+    }
+
+}
+--------------------------------------------------------------------------------------------------------------
